@@ -1,31 +1,56 @@
+
 # React Side Effects Lab
 
-## Overview
-This lab demonstrates how to handle **side effects** in React using the `useEffect` hook. The app fetches and displays a random **programming joke** when the page loads and allows users to fetch a new joke with a button click.
+## Description
 
-## Setup
+This project is a React application that fetches random programming jokes from an API. It uses useState to manage data and useEffect to fetch a joke when the page first loads.
 
-Run `npm install` to install dependencies.
+## Features
 
-Then, run `npm run dev` to start up the React app at `http://localhost:5173`.
+- Displays a random programming joke when the page loads.
+- Allows the user to get a new joke by clicking a button.
+- Displays a loading message while fetching a joke.
+- Handles errors if the API request fails.
 
-In another tab, run `npm run test` to run the test suite.
+## Technologies Used
 
-Before you start building out the application, examine the current code and component hierarchy. This will tell you how components can pass data to each other as well as where that information should be stored.
+- React
+- JavaScript
+- Vite
+- JokeAPI
 
-## Deliverables
+## Installation
 
-- **When our application loads**, make a `GET` request to `https://v2.jokeapi.dev/joke/Programming?type=single` to fetch a joke. Given your component tree, think about which component should be responsible for managing the joke data. Once the data is fetched, store it in state and render the joke on the page.
+1. Clone the GitHub repository.
+2. Open the project folder in VS Code.
+3. Install dependencies:
 
-- **When the `New Joke` button is clicked**, make another `GET` request to `https://v2.jokeapi.dev/joke/Programming?type=single` to fetch a new joke. Update the state accordingly so that the new joke replaces the old one in the UI.
+    npm install
 
-- **While waiting for the fetch request to resolve**, display a loading message to inform the user that a joke is being fetched.
+4. Start the application:
 
-- **If the API request fails**, handle the error gracefully by displaying a message instead of breaking the UI.
+    npm run dev
 
-## Best Practices
+5. Open the local URL provided in the terminal.
 
-- Use the `useEffect` hook to make API calls at the appropriate lifecycle phase.
-- Manage component state using the `useState` hook.
-- Keep components modular and reusable.
-- Remove unnecessary console logs and commented-out code before submission.
+## How It Works
+
+The App component uses useState to store the joke and loading status.
+
+The useEffect hook calls fetchJoke when the component first loads.
+
+The JokeDisplay component receives the joke and loading state through props and displays the correct message.
+
+The FetchButton component receives the fetchJoke function through props and calls it when clicked.
+
+## Testing
+
+Run the tests using:
+
+    npm test
+
+All 3 tests passed.
+
+## What I Learned
+
+In this lab, I practiced using useState and useEffect in React. I also learned how to fetch data from an API, pass props between components, and use an event handler to update the page without refreshing it.
